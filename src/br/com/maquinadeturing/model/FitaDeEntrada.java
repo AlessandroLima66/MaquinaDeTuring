@@ -4,26 +4,38 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FitaDeEntrada {
-	private List<String> fitadeEntrada;	
+	private List<String> fitadeEntrada= new ArrayList<>();
+	private int indexFita = 1;
 	
 	public FitaDeEntrada() {
-		fitadeEntrada = new ArrayList<>();
 	
 	}
 
-	public List<String> getFitadeEntrada() {
+	
+	public List<String> getFitaDeEntrada(){
 		return this.fitadeEntrada;
 	}
 
-	public void setFitadeEntrada(List<String> fitadeEntrada) {
-		this.fitadeEntrada = fitadeEntrada;
+	public void setFitadeEntrada(String elementoFita) {
+		this.fitadeEntrada.add(elementoFita);
+	}
+	
+	public String getPosicaoFitadeEntrada(int index) {
+		return this.fitadeEntrada.get(index);
+	}
+	
+	public void setPosicaoFitaDeEntrada(String elementoFita) {
+		this.fitadeEntrada.set(indexFita, elementoFita);
 	}
 
-	
-	
-	
 
-	
+	public int getIndexFita() {
+		return indexFita;
+	}
+
+	public void setIndexFita(int indexFita) {
+		this.indexFita += indexFita;
+	}
 	
 	
 

@@ -1,11 +1,15 @@
 package br.com.maquinadeturing.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FuncaoDeTransicao {
 	private String estadoAtual;
 	private String simboloEncontrado;
 	private String operacaoDeImpressao;
 	private String estadoFuturo;
 	private MovimentoDaFita movimentoDaFita;
+	private List<FuncaoDeTransicao> funcoesDeTransicao = new ArrayList<>();
 
 	public FuncaoDeTransicao() {
 
@@ -60,9 +64,20 @@ public class FuncaoDeTransicao {
 	public void setMovimentoDaFita(MovimentoDaFita movimentoDaFita) {
 		this.movimentoDaFita = movimentoDaFita;
 	}
+	
 
+	public List<FuncaoDeTransicao> getFuncoesDeTransicao() {
+		return funcoesDeTransicao;
+	}
+
+	public void setFuncoesDeTransicao(FuncaoDeTransicao funcaoDeTransicao) {
+		this.funcoesDeTransicao.add(funcaoDeTransicao);
+	}
 	
-	
+	public boolean existeNaFita(List funcaoDeTransicao) {
+		return funcaoDeTransicao.contains(funcaoDeTransicao);
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
